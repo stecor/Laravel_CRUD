@@ -14,7 +14,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        return 'home page';
+      $posts = [1,2,3,4,5,6,7,8];
+        return view('posts/index', compact('posts'));
     }
 
     /**
@@ -24,7 +25,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        return 'create page';
+        return view('posts/create');
     }
 
     /**
@@ -35,7 +36,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        return 'store data';
+        return $request->all();
     }
 
     /**
@@ -46,7 +47,7 @@ class PostController extends Controller
      */
     public function show(Post $post, $title)
     {
-        return "show {$title} page";
+        return view('posts/show');
     }
 
     /**
@@ -57,7 +58,7 @@ class PostController extends Controller
      */
     public function edit(Post $post, $title)
     {
-        return 'edit page';
+        return view('posts/edit');
     }
 
     /**
